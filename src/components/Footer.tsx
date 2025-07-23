@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
   Twitter,
   Mail,
   Phone,
   MapPin,
   ArrowUp,
   Heart,
-  Zap
+  Zap,
 } from "lucide-react";
 
 const Footer = () => {
@@ -19,7 +19,11 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
+    {
+      icon: Instagram,
+      href: "https://instagram.com/halipixel",
+      label: "Instagram",
+    },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Twitter, href: "#", label: "Twitter" },
   ];
@@ -41,9 +45,9 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: Mail, text: "contato@halipixel.com" },
-    { icon: Phone, text: "+55 (11) 99999-9999" },
-    { icon: MapPin, text: "São Paulo, SP" },
+    { icon: Mail, text: "halipixel@hotmail.com", link: "mailto:halipixel@hotmail.com" },
+    { icon: Phone, text: "+55 (73) 99153-8093", link: "https://wa.me/5573991538093" },
+    { icon: MapPin, text: "Jequié, BA", link: "#" },
   ];
 
   return (
@@ -73,8 +77,9 @@ const Footer = () => {
                   HaliPixel
                 </h3>
                 <p className="text-gray-300 leading-relaxed">
-                  Criamos sites profissionais que impressionam, convertem e fazem seu negócio crescer.
-                  Transformamos suas ideias em realidade digital.
+                  Criamos sites profissionais que impressionam, convertem e
+                  fazem seu negócio crescer. Transformamos suas ideias em
+                  realidade digital.
                 </p>
               </div>
 
@@ -161,12 +166,19 @@ const Footer = () => {
               </h4>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg flex items-center justify-center border border-white/10">
-                      <info.icon className="w-5 h-5 text-blue-400" />
+                  <motion.a
+                    key={index}
+                    href={info.link}
+                    whileHover={{ x: 3 }}
+                    className="flex items-center space-x-3 hover:text-white transition-all duration-200 group cursor-pointer"
+                    target={info.link.startsWith('http') ? '_blank' : '_self'}
+                    rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  >
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-200">
+                      <info.icon className="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors duration-200" />
                     </div>
-                    <span className="text-gray-300">{info.text}</span>
-                  </div>
+                    <span className="text-gray-300 group-hover:text-white transition-colors duration-200">{info.text}</span>
+                  </motion.a>
                 ))}
               </div>
 
@@ -176,17 +188,22 @@ const Footer = () => {
                 whileTap={{ scale: 0.98 }}
                 className="mt-8 p-6 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-2xl border border-white/10 backdrop-blur-sm"
               >
-                <h5 className="font-bold text-white mb-2">Pronto para começar?</h5>
+                <h5 className="font-bold text-white mb-2">
+                  Pronto para começar?
+                </h5>
                 <p className="text-gray-300 text-sm mb-4">
                   Entre em contato e vamos criar algo incrível juntos!
                 </p>
-                <motion.button
+                <motion.a
+                  href="https://wa.me/5573991538093?text=Olá! Gostaria de solicitar um orçamento para desenvolvimento de site. Podemos conversar?"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 inline-block text-center"
                 >
                   Solicitar Orçamento
-                </motion.button>
+                </motion.a>
               </motion.div>
             </motion.div>
           </div>
@@ -199,9 +216,9 @@ const Footer = () => {
               <p className="text-gray-400 text-sm text-center sm:text-left">
                 © 2024 HaliPixel. Todos os direitos reservados. Feito com{" "}
                 <Heart className="w-4 h-4 text-red-400 inline mx-1" />
-                em São Paulo.
+                em Jequié - BA.
               </p>
-              
+
               <motion.button
                 onClick={scrollToTop}
                 whileHover={{ scale: 1.1, y: -2 }}
