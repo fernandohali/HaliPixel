@@ -74,7 +74,7 @@ const Services = () => {
         <div className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-r from-blue-400/10 to-purple-600/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
         <div className="absolute bottom-20 left-10 w-64 h-64 bg-gradient-to-r from-purple-400/10 to-pink-600/10 rounded-full mix-blend-multiply filter blur-3xl"></div>
       </div>
-      
+
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -94,7 +94,7 @@ const Services = () => {
             <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
             <span className="text-gray-700 font-semibold">Nossos Serviços</span>
           </motion.div>
-          
+
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6">
             Soluções{" "}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -164,7 +164,10 @@ const Services = () => {
                         key={featureIndex}
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: featureIndex * 0.1 }}
+                        transition={{
+                          duration: 0.3,
+                          delay: featureIndex * 0.1,
+                        }}
                         className="flex items-center space-x-3"
                       >
                         <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex-shrink-0"></div>
@@ -179,13 +182,18 @@ const Services = () => {
                   <div className="pt-6 border-t border-gray-100">
                     <div
                       className={`text-2xl lg:text-3xl font-bold mb-4 ${
-                        service.popular ? "bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" : "text-gray-900"
+                        service.popular
+                          ? "bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                          : "text-gray-900"
                       }`}
                     >
                       {service.price}
                     </div>
 
-                    <motion.button
+                    <motion.a
+                      href={`https://wa.me/5573991538093?text=Olá! Tenho interesse no serviço de ${service.title} (${service.price}). Podemos conversar sobre os detalhes?`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className={`w-full py-3 lg:py-4 px-6 rounded-2xl font-semibold transition-all duration-300 flex items-center justify-center space-x-2 text-sm lg:text-base ${
@@ -196,7 +204,7 @@ const Services = () => {
                     >
                       <span>Solicitar Orçamento</span>
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </motion.button>
+                    </motion.a>
                   </div>
                 </div>
               </div>
