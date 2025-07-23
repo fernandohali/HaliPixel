@@ -44,17 +44,20 @@ const Header = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
-            <motion.button
+            <motion.a
+              href="https://wa.me/5573991538093?text=Olá! Gostaria de solicitar um orçamento grátis para meu site. Podemos conversar?"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 xl:px-8 py-2.5 rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 font-semibold text-sm xl:text-base overflow-hidden group"
+              className="relative bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 xl:px-8 py-2.5 rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 font-semibold text-sm xl:text-base overflow-hidden group inline-block"
             >
               <span className="relative z-10">Orçamento Grátis</span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,14 +102,18 @@ const Header = () => {
                   {item.label}
                 </motion.a>
               ))}
-              <motion.button
+              <motion.a
+                href="https://wa.me/5573991538093?text=Olá! Gostaria de solicitar um orçamento grátis para meu site. Podemos conversar?"
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 font-semibold mt-4"
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-xl hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 font-semibold mt-4 inline-block text-center"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Orçamento Grátis
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         )}
