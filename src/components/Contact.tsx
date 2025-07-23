@@ -32,19 +32,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "contato@halipixel.com",
-      link: "mailto:contato@halipixel.com",
+      content: "halipixel@hotmail.com",
+      link: "mailto:halipixel@hotmail.com",
     },
     {
       icon: Phone,
       title: "Telefone",
-      content: "+55 (11) 99999-9999",
-      link: "tel:+5511999999999",
+      content: "+55 (73) 99153-8093",
+      link: "https://wa.me/5573991538093",
     },
     {
       icon: MapPin,
       title: "Localização",
-      content: "São Paulo, SP",
+      content: "Jequié, BA",
       link: "#",
     },
   ];
@@ -159,13 +159,16 @@ const Contact = () => {
                 <p className="text-blue-100 mb-6">
                   Entre em contato agora e receba um orçamento personalizado.
                 </p>
-                <motion.button
+                <motion.a
+                  href="https://wa.me/5573991538093?text=Olá! Gostaria de solicitar um orçamento para desenvolvimento de site. Podemos conversar?"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors duration-200"
+                  className="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors duration-200 inline-block text-center"
                 >
                   Solicitar Orçamento
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>
