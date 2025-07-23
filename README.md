@@ -115,9 +115,10 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para de
 
 ## 📞 Contato
 
-- **Email**: contato@halipixel.com
-- **Phone**: +55 (11) 99999-9999
-- **Website**: [halipixel.com](https://halipixel.com)
+- **Email**: halipixel@hotmail.com
+- **Phone**: +55 (73) 99153-8093
+- **Instagram**: [@halipixel](https://instagram.com/halipixel)
+- **Localização**: Jequié, BA
 
 ---
 
