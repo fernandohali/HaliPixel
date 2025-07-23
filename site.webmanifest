@@ -1,0 +1,21 @@
+{
+  "name": "HaliPixel",
+  "short_name": "HaliPixel",
+  "description": "Sites profissionais que convertem e fazem seu negócio crescer",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "./halipixel-icon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#667eea",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "./"
+}

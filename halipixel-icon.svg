@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Gradientes baseados no tema do site -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle com gradiente -->
+  <circle cx="32" cy="32" r="30" fill="url(#primaryGradient)" opacity="0.9"/>
+  
+  <!-- Letra "H" estilizada -->
+  <path d="M18 20 L18 44 L22 44 L22 34 L28 34 L28 44 L32 44 L32 20 L28 20 L28 30 L22 30 L22 20 Z" fill="white" opacity="0.9"/>
+  
+  <!-- Letra "P" estilizada -->
+  <path d="M36 20 L36 44 L40 44 L40 34 L44 34 C46.2 34 48 32.2 48 30 L48 24 C48 21.8 46.2 20 44 20 Z M40 24 L40 30 L44 30 L44 24 Z" fill="url(#accentGradient)"/>
+  
+  <!-- Pixel accent - pequenos quadrados representando pixels -->
+  <rect x="20" y="16" width="2" height="2" fill="url(#secondaryGradient)" opacity="0.8"/>
+  <rect x="24" y="14" width="2" height="2" fill="url(#accentGradient)" opacity="0.8"/>
+  <rect x="42" y="16" width="2" height="2" fill="url(#secondaryGradient)" opacity="0.8"/>
+  <rect x="46" y="14" width="2" height="2" fill="white" opacity="0.8"/>
+  
+  <!-- Efeito de brilho -->
+  <circle cx="26" cy="26" r="4" fill="white" opacity="0.3"/>
+  <circle cx="26" cy="26" r="2" fill="white" opacity="0.5"/>
+</svg>
