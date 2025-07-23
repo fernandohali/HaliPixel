@@ -45,8 +45,16 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: Mail, text: "halipixel@hotmail.com", link: "mailto:halipixel@hotmail.com" },
-    { icon: Phone, text: "+55 (73) 99153-8093", link: "https://wa.me/5573991538093" },
+    {
+      icon: Mail,
+      text: "halipixel@hotmail.com",
+      link: "mailto:halipixel@hotmail.com",
+    },
+    {
+      icon: Phone,
+      text: "+55 (73) 99153-8093",
+      link: "https://wa.me/5573991538093",
+    },
     { icon: MapPin, text: "Jequié, BA", link: "#" },
   ];
 
@@ -171,13 +179,19 @@ const Footer = () => {
                     href={info.link}
                     whileHover={{ x: 3 }}
                     className="flex items-center space-x-3 hover:text-white transition-all duration-200 group cursor-pointer"
-                    target={info.link.startsWith('http') ? '_blank' : '_self'}
-                    rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    target={info.link.startsWith("http") ? "_blank" : "_self"}
+                    rel={
+                      info.link.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
                   >
                     <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-all duration-200">
                       <info.icon className="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors duration-200" />
                     </div>
-                    <span className="text-gray-300 group-hover:text-white transition-colors duration-200">{info.text}</span>
+                    <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
+                      {info.text}
+                    </span>
                   </motion.a>
                 ))}
               </div>
