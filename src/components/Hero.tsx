@@ -97,7 +97,10 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center lg:justify-start"
             >
-              <motion.button
+              <motion.a
+                href="https://wa.me/5573991538093?text=Olá! Vi seu site e gostaria de começar um projeto. Podemos conversar sobre meu site?"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)",
@@ -108,7 +111,7 @@ const Hero = () => {
                 <span className="relative z-10">Começar Agora</span>
                 <ArrowRight className="h-5 w-5 lg:h-6 lg:w-6 relative z-10 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </motion.button>
+              </motion.a>
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
