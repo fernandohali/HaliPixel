@@ -30,23 +30,23 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="py-16 sm:py-20 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 lg:space-y-8 text-center lg:text-left"
           >
             <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 lg:mb-6">
                 Por que escolher a{" "}
                 <span className="text-primary-600">HaliPixel?</span>
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Somos especialistas em criar sites que não apenas impressionam
                 visualmente, mas que realmente geram resultados para o seu
                 negócio. Nossa abordagem combina design premium com estratégias
@@ -54,7 +54,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -62,15 +62,17 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="space-y-3"
+                  className="space-y-3 text-center lg:text-left"
                 >
-                  <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <feature.icon className="h-6 w-6 text-primary-600" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto lg:mx-0">
+                    <feature.icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary-600" />
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600">
+                    {feature.description}
+                  </p>
                 </motion.div>
               ))}
             </div>

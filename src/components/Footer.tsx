@@ -1,238 +1,220 @@
 import { motion } from "framer-motion";
-import {
+import { 
+  Facebook, 
+  Instagram, 
+  Linkedin, 
+  Twitter,
   Mail,
   Phone,
   MapPin,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
+  ArrowUp,
+  Heart,
+  Zap
 } from "lucide-react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const footerLinks = {
-    services: [
-      { name: "Landing Page", href: "#" },
-      { name: "Site One Page", href: "#" },
-      { name: "Site Corporativo", href: "#" },
-      { name: "Loja Virtual", href: "#" },
-    ],
-    company: [
-      { name: "Sobre Nós", href: "#about" },
-      { name: "Portfólio", href: "#portfolio" },
-      { name: "Contato", href: "#contact" },
-      { name: "Blog", href: "#" },
-    ],
-    support: [
-      { name: "FAQ", href: "#" },
-      { name: "Suporte", href: "#" },
-      { name: "Política de Privacidade", href: "#" },
-      { name: "Termos de Uso", href: "#" },
-    ],
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "#", name: "Facebook" },
-    { icon: Instagram, href: "#", name: "Instagram" },
-    { icon: Linkedin, href: "#", name: "LinkedIn" },
-    { icon: Twitter, href: "#", name: "Twitter" },
+    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+  ];
+
+  const quickLinks = [
+    { name: "Início", href: "#home" },
+    { name: "Sobre", href: "#about" },
+    { name: "Serviços", href: "#services" },
+    { name: "Portfólio", href: "#portfolio" },
+    { name: "Contato", href: "#contact" },
+  ];
+
+  const services = [
+    { name: "Landing Page", href: "#" },
+    { name: "Site One Page", href: "#" },
+    { name: "Site Corporativo", href: "#" },
+    { name: "Loja Virtual", href: "#" },
+    { name: "Sistema Web", href: "#" },
+  ];
+
+  const contactInfo = [
+    { icon: Mail, text: "contato@halipixel.com" },
+    { icon: Phone, text: "+55 (11) 99999-9999" },
+    { icon: MapPin, text: "São Paulo, SP" },
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-          {/* Company Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="lg:col-span-1"
-          >
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-primary-400 mb-4">
-                HaliPixel
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                Criamos sites profissionais que impressionam, convertem e fazem
-                seu negócio crescer. Sua presença digital de qualidade premium.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-300">contato@halipixel.com.br</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-300">(11) 99999-9999</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-primary-400" />
-                <span className="text-gray-300">São Paulo, SP</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-lg font-semibold mb-6">Serviços</h4>
-            <ul className="space-y-3">
-              {footerLinks.services.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-primary-400 transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Company */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-lg font-semibold mb-6">Empresa</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-primary-400 transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Support */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="text-lg font-semibold mb-6">Suporte</h4>
-            <ul className="space-y-3">
-              {footerLinks.support.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-primary-400 transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
-
-        {/* Newsletter */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-12 pt-8 border-t border-gray-800"
-        >
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h4 className="text-2xl font-bold mb-2">
-                Fique por dentro das novidades
-              </h4>
-              <p className="text-gray-300">
-                Receba dicas exclusivas sobre desenvolvimento web e marketing
-                digital.
-              </p>
-            </div>
-            <div className="flex space-x-4">
-              <input
-                type="email"
-                placeholder="Seu melhor email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent text-white"
-              />
-              <button className="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors font-semibold">
-                Inscrever
-              </button>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Bottom Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-12 pt-8 border-t border-gray-800"
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright */}
-            <div className="text-gray-400 text-center md:text-left">
-              <p>
-                &copy; {currentYear} HaliPixel. Todos os direitos reservados.
-              </p>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  title={social.name}
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors"
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+    <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-pink-600/10"></div>
+        {/* Animated Background Shapes */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-600/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
       </div>
 
-      {/* Back to Top Button */}
-      <motion.button
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700 transition-colors z-50"
-        title="Voltar ao topo"
-      >
-        <svg
-          className="h-6 w-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 10l7-7m0 0l7 7m-7-7v18"
-          />
-        </svg>
-      </motion.button>
+      <div className="relative">
+        {/* Main Footer Content */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <div className="grid lg:grid-cols-4 gap-8 lg:gap-12">
+            {/* Brand Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="lg:col-span-1"
+            >
+              <div className="mb-8">
+                <h3 className="text-3xl font-black bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
+                  HaliPixel
+                </h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Criamos sites profissionais que impressionam, convertem e fazem seu negócio crescer.
+                  Transformamos suas ideias em realidade digital.
+                </p>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/10 hover:border-white/20 transition-all duration-300 group"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors duration-200" />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Quick Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-xl font-bold text-white mb-6 flex items-center">
+                <Zap className="w-5 h-5 mr-2 text-blue-400" />
+                Links Rápidos
+              </h4>
+              <ul className="space-y-3">
+                {quickLinks.map((link, index) => (
+                  <li key={index}>
+                    <motion.a
+                      href={link.href}
+                      whileHover={{ x: 5 }}
+                      className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group"
+                    >
+                      <span className="w-1 h-1 bg-blue-400 rounded-full mr-3 group-hover:w-2 transition-all duration-200"></span>
+                      {link.name}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-xl font-bold text-white mb-6 flex items-center">
+                <Heart className="w-5 h-5 mr-2 text-pink-400" />
+                Nossos Serviços
+              </h4>
+              <ul className="space-y-3">
+                {services.map((service, index) => (
+                  <li key={index}>
+                    <motion.a
+                      href={service.href}
+                      whileHover={{ x: 5 }}
+                      className="text-gray-300 hover:text-white transition-all duration-200 flex items-center group"
+                    >
+                      <span className="w-1 h-1 bg-purple-400 rounded-full mr-3 group-hover:w-2 transition-all duration-200"></span>
+                      {service.name}
+                    </motion.a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <h4 className="text-xl font-bold text-white mb-6">
+                Fale Conosco
+              </h4>
+              <div className="space-y-4">
+                {contactInfo.map((info, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg flex items-center justify-center border border-white/10">
+                      <info.icon className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <span className="text-gray-300">{info.text}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Call to Action */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="mt-8 p-6 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 rounded-2xl border border-white/10 backdrop-blur-sm"
+              >
+                <h5 className="font-bold text-white mb-2">Pronto para começar?</h5>
+                <p className="text-gray-300 text-sm mb-4">
+                  Entre em contato e vamos criar algo incrível juntos!
+                </p>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
+                >
+                  Solicitar Orçamento
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 bg-black/20 backdrop-blur-sm">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+              <p className="text-gray-400 text-sm text-center sm:text-left">
+                © 2024 HaliPixel. Todos os direitos reservados. Feito com{" "}
+                <Heart className="w-4 h-4 text-red-400 inline mx-1" />
+                em São Paulo.
+              </p>
+              
+              <motion.button
+                onClick={scrollToTop}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 group"
+                aria-label="Voltar ao topo"
+              >
+                <ArrowUp className="w-5 h-5 text-white group-hover:translate-y-[-2px] transition-transform duration-200" />
+              </motion.button>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
